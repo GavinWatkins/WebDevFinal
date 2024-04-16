@@ -1,0 +1,39 @@
+:root {
+    --HeaderColor: rgb(245, 115, 115);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--HeaderColor);
+}
+
+#header-mainLine {
+    display: flex;
+    flex-direction: row;
+}
+
+#sub-header {
+    margin-left: 3.8em;
+}
+
+#svg-Container {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+#main-header {
+    margin: 0;
+    margin-left: 1.1em;
+    padding: 0;
+}
+
+
+#Body {
+    margin-top: 1.5em;
+}
