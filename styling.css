@@ -69,6 +69,12 @@ header {
     align-items: center;
 }
 
+#cardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #side-panel {
     display: flex;
     flex-direction: column;
@@ -86,6 +92,7 @@ header {
     border-style: solid;
     border-width: 0.3em;
     border-color: var(--BorderColor);
+    margin-top: 0;
 }
 
 #LegoFace {
@@ -130,4 +137,22 @@ footer {
     background-color: var(--HeaderColor);
     margin: 0;
     height: 5vh;
+}
+
+.card {
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-bottom: 1.5em;
+    border-style: solid;
+    border-color: var(--BorderColor);
+    border-radius: 1em;
+    border-width: 0.3em;
+    font-size: 1.2em;
+    width: 60%;
+    background-color: white;
+    transition: all 1s;
+}
+
+.card:hover {
+    transform: scale(1.2);
 }
