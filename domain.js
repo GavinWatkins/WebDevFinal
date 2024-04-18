@@ -27,3 +27,23 @@ export const removeFromCart = (book) => {
         CartList.splice(index, 1);
         console.log(CartList);
 }
+
+export const filterTitles = (text) => {
+        return books.filter((book) => {
+                if (book.title.toLowerCase().includes(text.toLowerCase())) {
+                        return book;
+                }
+        })
+};
+
+export const CartContainsBook = (title) => {
+        CartList.forEach(book => {
+                if (book.title === title) {
+                        console.log(title);
+                        return true;
+                }
+                else {
+                        return false;
+                }
+        });
+}
