@@ -105,7 +105,6 @@ header {
 
 #authorLink {
     display: flex;
-    text-decoration: none;
     font-size: 1.5em;
     text-align: center;
 }
@@ -128,7 +127,6 @@ header {
 }
 
 #cartLink {
-    text-decoration: none;
     font-size: 1.5em;
     display: flex;
     text-align: center;

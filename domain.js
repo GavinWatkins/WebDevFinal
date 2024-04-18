@@ -37,13 +37,12 @@ export const filterTitles = (text) => {
 };
 
 export const CartContainsBook = (title) => {
+        var DoesContain = false;
         CartList.forEach(book => {
                 if (book.title === title) {
                         console.log(title);
-                        return true;
-                }
-                else {
-                        return false;
+                        DoesContain = true;
                 }
         });
+        return DoesContain;
 }

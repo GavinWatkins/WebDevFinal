@@ -42,6 +42,7 @@ const BuildCards = (books) => {
         cardElement.appendChild(cardPrice);
         cardContainerElement.appendChild(cardElement);
         
+        console.log(book.title, CartContainsBook(book.title));
         if (CartContainsBook(book.title)) {
             checkBox.checked = true;
         }
