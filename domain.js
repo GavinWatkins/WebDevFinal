@@ -14,3 +14,16 @@ export const books = [
         price: "$20.00",
         description: "Unbeknownst to most, the world exists in the balance of good and evil. Tainted energy is what propels this balance. Tainted energy, if left to grow out of hand, forms Demons (nightmarish creatures invisible to most). Tainted energy can also be harnessed by a select few to destroy Demons. After the strongest Demon Zarich was trapped in an ancient dagger, good began to get the upper hand. Until the power of the dagger was unleashed, releasing Zarich's sould once more." }
 ];
+
+var CartList = [];
+
+export const addToCart = (book) => {
+        CartList.push(book);
+        console.log(CartList);
+};
+
+export const removeFromCart = (book) => {
+        const index = CartList.indexOf(book);
+        CartList.splice(index, 1);
+        console.log(CartList);
+}

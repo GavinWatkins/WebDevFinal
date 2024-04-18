@@ -70,6 +70,7 @@ header {
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
+    padding-bottom: 1.5em;
 }
 
 #cardContainer {
@@ -95,7 +96,7 @@ header {
     border-style: solid;
     border-width: 0.3em;
     border-color: var(--BorderColor);
-    margin-top: 0;
+    margin-top: 2em;
 }
 
 #LegoFace {
@@ -133,6 +134,14 @@ header {
     text-align: center;
 }
 
+figure:hover {
+    transform:scale(1.2);
+}
+
+figure {
+    transition: all 1s;
+}
+
 footer {
     display: flex;
     justify-content: center;
@@ -143,9 +152,11 @@ footer {
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
     padding-left: 1em;
     padding-right: 1em;
-    margin-bottom: 1.5em;
+    margin-top: 1.5em;
     border-style: solid;
     border-color: var(--BorderColor);
     border-radius: 1em;
@@ -157,5 +168,21 @@ footer {
 }
 
 .card:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+
+.cardHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input[type="checkbox"] {
+    height: 2em;
+    width: 2em;
+}
+
+.title {
+    font-size: 1.5em;
 }
