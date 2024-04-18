@@ -23,12 +23,13 @@
         <div id="sub-header">Current and Upcoming Books</div>
     </header>
 
+    <div id="searchForm">
+        <label for="searchBar">Search for Book by Title</label>
+        <input type="text" id="searchBar">
+    </div>
+    
     <section id="Body">
         <article id="Main">
-            <div id="searchForm">
-                <label for="searchBar">Search for Book by Title</label>
-                <input type="text" id="searchBar">
-            </div>
     
             <section id="cardContainer">
                 <div>Put your cards here</div>
@@ -36,8 +37,19 @@
         </article>
 
         <article id="side-panel">
-            <a href="">About the Author</a>
-            <a href="">Shopping Cart</a>
+            <figure id="authorContainer">
+                <img id="LegoFace" src="LegoFace.jpg" alt="A charming face">
+                <figcaption>
+                    <a id="authorLink" href="">About the Author</a>
+                </figcaption>
+            </figure>
+
+            <figure id="cartContainer">
+                <img id="cartPic" src="cartImage.png" alt="">
+                <figcaption>
+                    <a id="cartLink" href="">Shopping Cart</a>
+                </figcaption>
+            </figure>
         </article>
     </section>
 
