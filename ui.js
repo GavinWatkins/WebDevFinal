@@ -1,4 +1,4 @@
-import { CartContainsBook, CartList, addToCart, books, filterTitles, removeFromCart } from "./domain.js";
+import { CartContainsBook, getCartList, addToCart, books, filterTitles, removeFromCart } from "./domain.js";
 
 const cardContainerElement = document.getElementById("cardContainer");
 const cartContainerElement = document.getElementById("cartArea");
@@ -6,7 +6,7 @@ const searchInputElement = document.getElementById("searchBar");
 searchInputElement.addEventListener("input", () => {
     var updatedBooksList = filterTitles(searchInputElement.value)
     BuildCards(updatedBooksList);
-    BuildCart(CartList);
+    BuildCart(getCartList());
 });
 
 const BuildCards = (books) => {
@@ -31,6 +31,7 @@ const BuildCards = (books) => {
         checkBox.addEventListener("click", () => {
             if(checkBox.checked === true) {
                 addToCart(book);
+                console.log(getCartList());
             }
             else {
                 removeFromCart(book);
@@ -89,4 +90,4 @@ const BuildCart = (cartItems) => {
 };
 
 BuildCards(books);
-BuildCart(CartList);
+BuildCart(getCartList());
