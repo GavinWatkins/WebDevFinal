@@ -1,3 +1,12 @@
+//Client service.js
+export const GetAllBooks = async () => {
+    const url = "http://localhost:5087/books";
+    const response = await fetch(url);
+    return await response.json();
+}
+
+
+
 //api program.cs
 
 // var builder = WebApplication.CreateBuilder(args);
@@ -32,15 +41,6 @@
 // record User(string UserName, Guid Id);
 
 // record UserCreationRequest(string UserName);
-
-
-
-//Client service.js
-// export const GetAllUserAccounts = async () => {
-//     const url = "http://localhost:5261/userAccounts";
-//     const response = await fetch(url);
-//     return await response.json();
-// }
 
 //Client domain.js
 //array = GetAllUserAccounts
