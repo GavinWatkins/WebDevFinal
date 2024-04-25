@@ -1,6 +1,8 @@
 //Client service.js
+const baseURL = "https://booksitething.azurewebsites.net";
+// const baseURL = "https://booksitething.azurewebsites.net";
 export const GetAllBooks = async () => {
-    const url = "http://localhost:5087/books";
+    const url = baseURL + "/books";
     const response = await fetch(url);
     return await response.json();
 }
