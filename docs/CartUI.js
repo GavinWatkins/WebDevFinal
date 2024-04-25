@@ -32,6 +32,7 @@ const BuildCart = (cartItems) => {
         cardElement.appendChild(cardTitle);
         cardElement.appendChild(cardDescription);
         cardElement.appendChild(cardPrice);
+        cardElement.draggable = true;
         cartContainerElement.appendChild(cardElement);
 
         cardElement.addEventListener("mouseover", () => {
