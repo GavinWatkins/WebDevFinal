@@ -1,13 +1,22 @@
-import { CartContainsBook, getCartList, addToCart, books, filterTitles, removeFromCart } from "./domain.js";
+import { CartContainsBook, addToCart, books, filterTitles, getCartList, removeFromCart } from "./domain.js";
 
 const cardContainerElement = document.getElementById("cardContainer");
-const cartContainerElement = document.getElementById("cartArea");
+const cartFigureElement = document.getElementById("cartContainer");
+cartFigureElement.addEventListener("click", () => {
+    const url = new URL("shoppingPage.html", window.location.href);
+    var value = "";
+    getCartList().forEach(item => {
+        value += `${item.title};`;
+    });
+    url.searchParams.set('inCart', value);
+    location.assign(url);
+});
 const searchInputElement = document.getElementById("searchBar");
 searchInputElement.addEventListener("input", () => {
     var updatedBooksList = filterTitles(searchInputElement.value)
     BuildCards(updatedBooksList);
-    BuildCart(getCartList());
 });
+
 
 const BuildCards = (books) => {
     cardContainerElement.replaceChildren();
@@ -31,7 +40,6 @@ const BuildCards = (books) => {
         checkBox.addEventListener("click", () => {
             if(checkBox.checked === true) {
                 addToCart(book);
-                console.log(getCartList());
             }
             else {
                 removeFromCart(book);
@@ -58,36 +66,6 @@ const BuildCards = (books) => {
     });
 };
 
-const BuildCart = (cartItems) => {
-    console.log("Should update cart");
-    cartContainerElement.replaceChildren();
-    cartItems.forEach(item => {
-        const cardElement = document.createElement("div");
-        cardElement.classList.add("card");
 
-        const cardTitle = document.createElement("p");
-        cardTitle.classList.add("title");
-        const cardDescription = document.createElement("p");
-        const cardPrice = document.createElement("p");
-
-        cardTitle.textContent = item.title;
-        const abbreviatedDescription = item.description.substring(0, 50) + "...";
-        cardDescription.textContent = abbreviatedDescription;
-        cardPrice.textContent = item.price;
-
-        cardElement.appendChild(cardTitle);
-        cardElement.appendChild(cardDescription);
-        cardElement.appendChild(cardPrice);
-        cardContainerElement.appendChild(cardElement);
-
-        cardElement.addEventListener("mouseover", () => {
-            cardDescription.textContent = book.description;
-    });
-        cardElement.addEventListener("mouseleave", () => {
-            cardDescription.textContent = abbreviatedDescription;
-        });
-    })
-};
 
 BuildCards(books);
-BuildCart(getCartList());
