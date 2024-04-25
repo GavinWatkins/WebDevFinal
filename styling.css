@@ -64,6 +64,91 @@ header {
     min-height: 0;
 }
 
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    font-size: 1.5em;
+}
+
+#ShoppingBody {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: row;
+    height: 78vh;
+    background-color: var(--BodyColor);
+    flex-grow: 1;
+    min-height: 0;
+}
+
+#paymentForm {
+    border-style: solid;
+    border-color: var(--BorderColor);
+    border-radius: 2em;
+    margin: 5em;
+    margin-top: 1em;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    font-size: 1.5em;
+}
+
+#formHeader {
+    width: 100%;
+    text-align: center;
+}
+
+.formLine {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.formLabel {
+    margin-right: 1em;
+}
+
+#streetAddress {
+    width: 13em;
+    font-size: 0.9em;
+}
+
+#city {
+    width: 10em;
+    font-size: 0.9em;
+}
+
+#creditCardNumber {
+    width: 16em;
+    font-size: 0.9em;
+}
+
+#submitButton {
+    font-size: 0.9em;
+    border-radius: 0.5em;
+    padding: 0.3em;
+}
+
+#side-bar {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    padding-bottom: 1.5em;
+}
+
+#cartArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 #Main {
     width: 75%;
     display: flex;

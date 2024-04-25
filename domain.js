@@ -2,7 +2,7 @@ import { GetAllBooks } from "./service.js";
 
 export const books = await GetAllBooks();
 
-var CartList = [];
+export var CartList = [];
 
 export const addToCart = (book) => {
         CartList.push(book);
