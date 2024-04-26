@@ -23,4 +23,4 @@ app.MapGet("/books", () => {
 
 app.Run();
 
-record Book(string title, int pageCount, string price, string description);
+record Book(string title, int pageCount, double price, string description);
