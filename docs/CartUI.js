@@ -1,4 +1,4 @@
-import { addToCart, books, getCartList } from "./domain.js";
+import { PriceInCart, addToCart, books, getCartList } from "./domain.js";
 
 const cartContainerElement = document.getElementById("cartArea");
 const urlParams = new URLSearchParams(window.location.search);
@@ -11,6 +11,11 @@ InCartTitles.forEach(title => {
             }
         });
 });
+
+const priceElement = document.getElementById("priceContainer");
+const updatePrice = () => {
+    priceElement.textContent = `Price: $${PriceInCart()}`;
+};
 
 const BuildCart = (cartItems) => {
     console.log("Should update cart");
@@ -27,7 +32,7 @@ const BuildCart = (cartItems) => {
         cardTitle.textContent = item.title;
         const abbreviatedDescription = item.description.substring(0, 50) + "...";
         cardDescription.textContent = abbreviatedDescription;
-        cardPrice.textContent = item.price;
+        cardPrice.textContent = `$${item.price}`;
 
         cardElement.appendChild(cardTitle);
         cardElement.appendChild(cardDescription);

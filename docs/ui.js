@@ -35,7 +35,7 @@ const BuildCards = (books) => {
         cardTitle.textContent = book.title;
         const abbreviatedDescription = book.description.substring(0, 150) + "...";
         cardDescription.textContent = abbreviatedDescription;
-        cardPrice.textContent = book.price;
+        cardPrice.textContent = `$${book.price}`;
         
         checkBox.addEventListener("click", () => {
             if(checkBox.checked === true) {

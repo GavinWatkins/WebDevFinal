@@ -37,6 +37,14 @@ export const CartContainsBook = (title) => {
         return DoesContain;
 }
 
+export const PriceInCart = () => {
+        var Price = 0;
+        CartList.forEach(book => {
+                Price += book.Price;
+        });
+        return Price;
+}
+
 // [
 //         {   title: "The Glimmer Crisis",
 //         pageCount: 300,
