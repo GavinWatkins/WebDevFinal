@@ -66,6 +66,12 @@ export const SetCartToLoadedData = () => {
         CartList = LoadFromStorage();
 };
 
+export const BookTitles = () => {
+        return books.map((book) => {
+                return book.title;
+        });
+};
+
 // [
 //         {   title: "The Glimmer Crisis",
 //         pageCount: 300,

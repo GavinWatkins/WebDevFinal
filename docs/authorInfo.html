@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styling.css">
-    <script type="module" src="./ui.js"></script>
+    <script type="module" src="./authorUI.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <header>
+    <header id="authorHead">
         <div id="header-mainLine">
             <div id="svg-Container">
                 <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
@@ -23,13 +23,30 @@
         <div id="sub-header">Current and Upcoming Books</div>
     </header>
 
-    <div>
-        <a href="index.html">Return to Home Page</a>
-    </div>
+    <section id="authorBody">
+        <h1 id="authorHeader">About the Author</h1>
+        <article id="infoContainer">
+            <p id="infoAuthor">
+                ots of textLots of textLots of textLots of text ots of textLots of textLots of textLots of text ots of textLots of textLots of textLots of text ots of textLots of textLots of textLots of text ots of textLots of textLots of textLots of text ots of textLots of textLots of textLots of text ots of textLots of textLots of textLots of text V ots of textLots of textLots of textLots of text ots of textLots of textLots of textLots of text ots of textLots of textLots of textLots of text
+            </p>
+            
+            <h2 class="smallerHeader">Fun Facts About the Author</h2>
+            <ul id="authorFactList">
+                <li>He is an identical twin</li>
+                <li>Enjoys writing and playing video games</li>
+                <li>Likes strawberry ice cream</li>
+            </ul>
 
-    //Include List
+            <h2 class="smallerHeader">First Published Books</h2>
+            <div id="authorBooksContainer"></div>
+        </article>
 
-    <footer>
+        <nav id="authorLinks">
+            <a href="index.html">Return to Home Page</a>
+        </nav>
+    </section>
+
+    <footer id="authorFoot">
         <div>Copyright Gavin Watkins &copy 2024</div>
     </footer>
 </body>

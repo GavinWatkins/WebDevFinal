@@ -11,6 +11,7 @@ body {
     flex-direction: column;
     margin: 0;
     background-color: var(--BodyColor);
+    height: 100vh;
 }
 
 header {
@@ -315,4 +316,44 @@ input[type="checkbox"] {
 
 .title {
     font-size: 1.5em;
+}
+
+#authorHead {
+    height: 7%;
+}
+
+#authorBody {
+    height: 88%;
+}
+
+#authorFoot {
+    height: 5%;
+}
+
+#authorLinks {
+    font-size: 1.5em;
+}
+
+#authorHeader {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.smallerHeader {
+    font-size: 1.4em;
+}
+
+#infoContainer {
+    height: 75%;
+    padding-right: 3em;
+    padding-left: 3em;
+    font-size: 1.4em;
+}
+
+.bookTitle {
+    margin: 0;
+}
+
+#authorBooksContainer:nth-child(odd) {
+    background-color: white;
 }
