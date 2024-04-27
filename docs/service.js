@@ -8,6 +8,31 @@ export const GetAllBooks = async () => {
 }
 
 
+export const ResetStorage = () => {
+    localStorage.clear();
+};
+
+export const SaveToStorage = (cart) => {
+    //make array into a string
+    console.log(cart);
+    const listAsString = JSON.stringify(cart);
+    
+    //store it in the server with a key attached
+    localStorage.setItem("myCart", listAsString);
+};
+
+export const LoadFromStorage = () => {
+    //pull information from the server with a key
+    const dataFromStorage = localStorage.getItem("myCart");
+    
+    //change your pulled information to an array of objects
+    const objectList = JSON.parse(dataFromStorage);
+
+    console.log(objectList);
+    return objectList;
+};
+
+
 
 //api program.cs
 

@@ -1,4 +1,4 @@
-import { PriceInCart, addToCart, books, getCartList, removeFromCartbyTitle } from "./domain.js";
+import { PriceInCart, SaveNewCartToStorage, addToCart, books, getCartList, removeFromCartbyTitle } from "./domain.js";
 
 const cartContainerElement = document.getElementById("cartArea");
 const urlParams = new URLSearchParams(window.location.search);
@@ -49,6 +49,7 @@ const dragHereTextElement = document.getElementById("dragHereText");
 const formElement = document.getElementById("paymentForm");
 formElement.addEventListener("submit", (e) => {
     e.preventDefault();
+    SaveNewCartToStorage();
 });
 formElement.addEventListener("dragover", (e) => {
     e.preventDefault();

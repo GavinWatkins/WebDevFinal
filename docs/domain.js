@@ -1,4 +1,4 @@
-import { GetAllBooks } from "./service.js";
+import { GetAllBooks, LoadFromStorage, ResetStorage, SaveToStorage } from "./service.js";
 
 export const books = await GetAllBooks();
 
@@ -57,6 +57,15 @@ export const PriceInCart = () => {
         });
         return Price;
 }
+
+export const SaveNewCartToStorage = () => {
+        ResetStorage();
+        SaveToStorage(CartList);
+};
+
+export const SetCartToLoadedData = () => {
+        CartList = LoadFromStorage();
+};
 
 // [
 //         {   title: "The Glimmer Crisis",

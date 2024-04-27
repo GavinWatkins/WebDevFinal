@@ -1,5 +1,6 @@
-import { CartContainsBook, addToCart, books, filterTitles, getCartList, removeFromCart } from "./domain.js";
+import { CartContainsBook, SetCartToLoadedData, addToCart, books, filterTitles, getCartList, removeFromCart } from "./domain.js";
 
+SetCartToLoadedData();
 const cardContainerElement = document.getElementById("cardContainer");
 const cartFigureElement = document.getElementById("cartContainer");
 cartFigureElement.addEventListener("click", () => {
