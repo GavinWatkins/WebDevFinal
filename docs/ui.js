@@ -12,6 +12,11 @@ cartFigureElement.addEventListener("click", () => {
     url.searchParams.set('inCart', value);
     location.assign(url);
 });
+const authorFigureElement = document.getElementById("authorContainer");
+authorFigureElement.addEventListener("click", () => {
+    const url = new URL("authorInfo.html", window.location.href);
+    location.assign(url);
+});
 const searchInputElement = document.getElementById("searchBar");
 searchInputElement.addEventListener("input", () => {
     var updatedBooksList = filterTitles(searchInputElement.value)
