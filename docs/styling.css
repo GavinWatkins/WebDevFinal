@@ -4,6 +4,7 @@
     --BorderColor: rgb(118, 90, 90);
     --DragHereColor: rgb(173, 143, 143);
     --AccentTextColor: purple;
+    --AlternateRowColor: rgb(216, 168, 168);
 }
 
 body {
@@ -354,6 +355,6 @@ input[type="checkbox"] {
     margin: 0;
 }
 
-#authorBooksContainer:nth-child(odd) {
-    background-color: white;
+p:nth-child(odd) {
+    background-color: var(--AlternateRowColor);
 }
