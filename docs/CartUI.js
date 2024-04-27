@@ -51,3 +51,4 @@ const BuildCart = (cartItems) => {
 
 BuildCart(getCartList());
 console.log(getCartList());
+updatePrice();

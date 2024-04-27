@@ -10,6 +10,7 @@ export const getCartList = () => {
 export const addToCart = (book) => {
         CartList.push(book);
         console.log(CartList);
+        console.log(book.price);
 };
 
 export const removeFromCart = (book) => {
@@ -40,7 +41,7 @@ export const CartContainsBook = (title) => {
 export const PriceInCart = () => {
         var Price = 0;
         CartList.forEach(book => {
-                Price += book.Price;
+                Price += book.price;
         });
         return Price;
 }
