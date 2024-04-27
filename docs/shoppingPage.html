@@ -44,6 +44,15 @@
                 <input type="text" id="creditCardNumber">
             </div>
             <div class="formLine">
+                <label for="shippingMethod" class="formLabel">Select Shipping</label>
+                <select name="shippingMethod" id="shippingMethod">
+                    <option value="premium">Premium Shipping</option>
+                    <option value="3-day">3-Day Shipping</option>
+                    <option value="regular">Regular Shipping</option>
+                </select>
+            </div>
+            <div class="formLine">
+                <h2 id="priceContainer">Total: $0.00</h2>
                 <input type="submit" id="submitButton">
             </div>
             <div>
@@ -54,9 +63,8 @@
         <section id="side-bar">
             <h1 id="cartHeader">Your Cart</h1>
             <h1 id="cartSubHeader">(Drag to Remove Items)</h1>
-            <h2 id="priceContainer">Total: $0.00</h2>
             <article id="cartArea">
-                <p>Display items in cart here</p>
+                <p>Currently No Items in Cart</p>
             </article>
         </section>
     </section>

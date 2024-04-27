@@ -3,20 +3,48 @@ import { PriceInCart, addToCart, books, getCartList, removeFromCartbyTitle } fro
 const cartContainerElement = document.getElementById("cartArea");
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('inCart');
-const InCartTitles = myParam.split(';');
-InCartTitles.forEach(title => {
-        books.forEach(book => {
-            if(book.title == title) {
-                addToCart(book);
-            }
-        });
-});
+if (myParam != null) {
+    const InCartTitles = myParam.split(';');
+    InCartTitles.forEach(title => {
+            books.forEach(book => {
+                if(book.title == title) {
+                    addToCart(book);
+                }
+            });
+    });
+}
 
+var shippingPrice;
+const selectElement = document.getElementById("shippingMethod");
+const updateShippingPrice = () => {
+    if (selectElement.value === "premium") {
+        shippingPrice = 15;
+    }
+    else if (selectElement.value === "3-day") {
+        shippingPrice = 10;
+    }
+    else {
+        shippingPrice = 5;
+    }
+};
+updateShippingPrice();
+selectElement.addEventListener("change", () => {
+    updateShippingPrice();
+    updatePrice();
+});
 const priceElement = document.getElementById("priceContainer");
+const CartHeaderElement = document.getElementById("cartHeader");
 const updatePrice = () => {
-    priceElement.textContent = `Price: $${PriceInCart()}`;
+    var CartPrice = PriceInCart();
+    console.log(CartPrice);
+    console.log(shippingPrice);
+    CartPrice += shippingPrice;
+    priceElement.textContent = `Price: $${CartPrice}`;
+    CartHeaderElement.textContent = `Your Cart: $${PriceInCart()}`;
 };
 
+const submitButton = document.getElementById("submitButton");
+submitButton.innerText = "Purchase";
 const dragHereTextElement = document.getElementById("dragHereText");
 const formElement = document.getElementById("paymentForm");
 formElement.addEventListener("submit", (e) => {
