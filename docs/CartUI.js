@@ -1,4 +1,4 @@
-import { PriceInCart, addToCart, books, getCartList } from "./domain.js";
+import { PriceInCart, addToCart, books, getCartList, removeFromCartbyTitle } from "./domain.js";
 
 const cartContainerElement = document.getElementById("cartArea");
 const urlParams = new URLSearchParams(window.location.search);
@@ -17,6 +17,7 @@ const updatePrice = () => {
     priceElement.textContent = `Price: $${PriceInCart()}`;
 };
 
+const dragHereTextElement = document.getElementById("dragHereText");
 const formElement = document.getElementById("paymentForm");
 formElement.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -30,6 +31,9 @@ formElement.addEventListener("dragenter", (e) => {
 formElement.addEventListener("drop", (e) => {
     const draggedBookTitle = e.dataTransfer.getData("text/plain");
     console.log(draggedBookTitle);
+    removeFromCartbyTitle(draggedBookTitle);
+    updatePrice();
+    BuildCart(getCartList());
 });
 
 const BuildCart = (cartItems) => {
@@ -55,6 +59,12 @@ const BuildCart = (cartItems) => {
         cardElement.draggable = true;
         cardElement.addEventListener("dragstart", (e) => {
             e.dataTransfer.setData("text/plain", item.title);
+            formElement.classList.add("dragHere");
+            dragHereTextElement.textContent = "Drag Here to Remove From Cart";
+        });
+        cardElement.addEventListener("dragend", () => {
+            formElement.classList.remove("dragHere");
+            dragHereTextElement.textContent = "";
         });
 
         cartContainerElement.appendChild(cardElement);

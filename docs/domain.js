@@ -17,7 +17,19 @@ export const removeFromCart = (book) => {
         const index = CartList.indexOf(book);
         CartList.splice(index, 1);
         console.log(CartList);
-}
+};
+
+export const removeFromCartbyTitle = (title) => {
+        var BookToRemove;
+        CartList.forEach((book) => {
+                if (book.title === title) {
+                        BookToRemove = book;
+                };
+        });
+        const index = CartList.indexOf(BookToRemove);
+        CartList.splice(index, 1);
+        console.log(CartList);
+};
 
 export const filterTitles = (text) => {
         return books.filter((book) => {
