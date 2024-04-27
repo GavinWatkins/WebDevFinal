@@ -358,6 +358,12 @@ input[type="checkbox"] {
     margin: 0;
 }
 
-p:nth-child(odd) {
+mark {
+    display: block;
+    background-color: var(--BodyColor);
+    text-decoration: none;
+}
+
+mark:nth-child(odd) {
     background-color: var(--AlternateRowColor);
 }

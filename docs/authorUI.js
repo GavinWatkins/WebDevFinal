@@ -4,7 +4,7 @@ const TitleContainerElement = document.getElementById("authorBooksContainer");
 var titleList = BookTitles();
 TitleContainerElement.replaceChildren();
 titleList.forEach(Title => {
-    const singleTitleElement = document.createElement("p");
+    const singleTitleElement = document.createElement("mark");
     singleTitleElement.textContent = Title;
     singleTitleElement.classList.add("bookTitle");
     TitleContainerElement.appendChild(singleTitleElement);
