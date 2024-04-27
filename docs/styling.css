@@ -138,10 +138,14 @@ nav {
     padding: 0.3em;
 }
 
-#dragHereText {
+#alertText {
     text-align: center;
     font-weight: bold;
     color: var(--AccentTextColor);
+}
+
+#ConfirmationText {
+    text-align: center;
 }
 
 #side-bar {

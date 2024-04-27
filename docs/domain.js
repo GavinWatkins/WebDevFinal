@@ -43,7 +43,6 @@ export const CartContainsBook = (title) => {
         var DoesContain = false;
         CartList.forEach(book => {
                 if (book.title === title) {
-                        console.log(title);
                         DoesContain = true;
                 }
         });

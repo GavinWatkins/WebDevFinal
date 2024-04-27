@@ -31,6 +31,7 @@ updateShippingPrice();
 selectElement.addEventListener("change", () => {
     updateShippingPrice();
     updatePrice();
+    confirmationElement.textContent = "";
 });
 const priceElement = document.getElementById("priceContainer");
 const CartHeaderElement = document.getElementById("cartHeader");
@@ -43,13 +44,37 @@ const updatePrice = () => {
     CartHeaderElement.textContent = `Your Cart: $${PriceInCart()}`;
 };
 
-const submitButton = document.getElementById("submitButton");
-submitButton.innerText = "Purchase";
-const dragHereTextElement = document.getElementById("dragHereText");
+const dragHereTextElement = document.getElementById("alertText");
+const confirmationElement = document.getElementById("ConfirmationText");
 const formElement = document.getElementById("paymentForm");
+const addressElement = document.getElementById("streetAddress");
+addressElement.addEventListener("input", () => {
+    confirmationElement.textContent = "";
+});
+const cityElement = document.getElementById("city");
+cityElement.addEventListener("input", () => {
+    confirmationElement.textContent = "";
+});
+const creditCardElement = document.getElementById("creditCardNumber");
+creditCardElement.addEventListener("input", () => {
+    confirmationElement.textContent = "";
+});
 formElement.addEventListener("submit", (e) => {
     e.preventDefault();
-    SaveNewCartToStorage();
+    if (addressElement.value.length < 4) {
+        dragHereTextElement.textContent = "Must Include Valid Address!";
+    }
+    else if (cityElement.value.length < 1) {
+        dragHereTextElement.textContent = "Must Include a City!";
+    }
+    else if (creditCardElement.value.length < 16) {
+        dragHereTextElement.textContent = "Missing Valid Credit Card!";
+    }
+    else {
+        dragHereTextElement.textContent = "";
+        confirmationElement.textContent = "Purchase Successful!";
+        SaveNewCartToStorage();
+    };
 });
 formElement.addEventListener("dragover", (e) => {
     e.preventDefault();
@@ -63,6 +88,7 @@ formElement.addEventListener("drop", (e) => {
     removeFromCartbyTitle(draggedBookTitle);
     updatePrice();
     BuildCart(getCartList());
+    confirmationElement.textContent = "";
 });
 
 const BuildCart = (cartItems) => {
