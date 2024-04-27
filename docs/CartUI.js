@@ -17,6 +17,21 @@ const updatePrice = () => {
     priceElement.textContent = `Price: $${PriceInCart()}`;
 };
 
+const formElement = document.getElementById("paymentForm");
+formElement.addEventListener("submit", (e) => {
+    e.preventDefault();
+});
+formElement.addEventListener("dragover", (e) => {
+    e.preventDefault();
+});
+formElement.addEventListener("dragenter", (e) => {
+    e.preventDefault();
+});
+formElement.addEventListener("drop", (e) => {
+    const draggedBookTitle = e.dataTransfer.getData("text/plain");
+    console.log(draggedBookTitle);
+});
+
 const BuildCart = (cartItems) => {
     console.log("Should update cart");
     cartContainerElement.replaceChildren();
@@ -38,6 +53,10 @@ const BuildCart = (cartItems) => {
         cardElement.appendChild(cardDescription);
         cardElement.appendChild(cardPrice);
         cardElement.draggable = true;
+        cardElement.addEventListener("dragstart", (e) => {
+            e.dataTransfer.setData("text/plain", item.title);
+        });
+
         cartContainerElement.appendChild(cardElement);
 
         cardElement.addEventListener("mouseover", () => {
