@@ -7,6 +7,13 @@
     --AlternateRowColor: rgb(216, 168, 168);
 }
 
+.newFontStyle {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
     display: flex;
     flex-direction: column;
