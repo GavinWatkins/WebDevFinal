@@ -63,7 +63,9 @@ export const SaveNewCartToStorage = () => {
 };
 
 export const SetCartToLoadedData = () => {
-        CartList = LoadFromStorage();
+        if (LoadFromStorage() != null) {
+                CartList = LoadFromStorage();
+        }
 };
 
 export const BookTitles = () => {
